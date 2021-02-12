@@ -1,0 +1,16 @@
+folder: '190502_GCaMP_d9_longerPacing'
+regexs:
+  - '{date}_{experiment}_{chip}_{pacing_frequency}_{dummy1}/Point{chip}_{media1}_Channel{channel}_{roi}_Seq{seq_nr}.nd2'
+  - '{date}_{experiment}_{chip}_{pacing_frequency}_{dummy1}_{dummy2}/Point{chip}_{media1}_Channel{channel}_{roi}_Seq{seq_nr}.nd2'
+  - '{date}_{experiment}_{chip}_{pacing_frequency}_{dummy1}_{dummy2}_{dummy3}/Point{chip}_{media1}_Channel{channel}_{roi}_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'experiment'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-05-06'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2019-05-02'
+experiment_by: 'Verena Charwat'

@@ -1,0 +1,16 @@
+folder: '181211_2D_SCVi20_MM_Sm'
+regexs:
+  - '{date}_SM_MM_11d_{pacing_frequency}{experiment}/Point{chip}_{media}_Channel{channel}_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'date'
+  - 'experiment'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-04-10'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2018-12- 11'
+experiment_by: 'Berenice Charrez'
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\181211_2D_SCVi20_MM_Sm'

@@ -1,0 +1,21 @@
+folder: '190809_Pilsicainide_GCaMP'
+regexs:
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_{drug}_Channel{channel}_{roi}_Seq{seq_nr}_{paced_str}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_{drug}_Channel{channel}_{roi}_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_{drug}_Channel{channel}_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_Channel{channel}_{roi}_Seq{seq_nr}_{paced_str}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_Channel{channel}_{roi}_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_Channel{channel}_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'dose'
+  - 'roi'
+  - 'paced_str'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-08-16'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2019-08-09'
+experiment_by: 'Verena Charwat'

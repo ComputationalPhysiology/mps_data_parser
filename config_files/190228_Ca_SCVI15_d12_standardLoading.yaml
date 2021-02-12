@@ -1,0 +1,20 @@
+folder: '190228_Ca_SCVI15_d12_standardLoading'
+regexs:
+  - '{date}_{dose1}_{dose2}_{pacing_frequency}/Point{media}_{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/{media}/Point{media}_{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{media}_{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'date'
+  - 'dose'
+rules:
+  - 'dose = dose if not dose == "none" else ".".join([dose1, dose2])'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-04-10'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2019-02-28'
+experiment_by: 'Berenice Charrez'
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\190228_Ca_SCVI15_d12_standardLoading\'

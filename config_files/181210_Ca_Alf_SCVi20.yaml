@@ -1,0 +1,19 @@
+folder: "181210_Ca_Alf_SCVi20"
+regexs:
+  - "{dose}/{date}_{dose_alf}Alf_{dose_ca}Ca_{pacing_frequency}/{drug}/Point{chip}_{media}_{drug}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{dose}/{date}_{dose_alf}Alf_{dose_ca}Ca_{pacing_frequency}/{drug}/Point{chip}_{media}_{drug}_pill_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{dose}/{date}_{dose_alf}Alf_{dose_ca}Ca_{pacing_frequency}/{drug}/Point{chip}_{media}_ctl_pill_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{dose}/{date}_{dose_alf}Alf_{dose_ca}Ca_{pacing_frequency}/{drug}/Point{chip}_{media}_ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+unique_columns:
+  - "media"
+  - "chip"
+  - "pacing_frequency"
+  - "drug"
+  - "dose"
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: "2019-10-29"
+uploaded_by: "Henrik Finsberg"
+experiment_date: "2018-12-16"
+experiment_by: "Berenice Charrez"
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\181210_Ca_Alf_SCVi20'

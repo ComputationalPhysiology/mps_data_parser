@@ -1,0 +1,21 @@
+folder: '190804_Verap_Flec_SCVI20_std'
+regexs:
+  - '{date}_{dose}_{d1}_{pacing_frequency}/Point{chip}_{media}_{drug_}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{d1}_Dose5_Verap_{pacing_frequency}/Point{chip}_{media}_{drug_}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+  - '{date}_{dose}_{pacing_frequency}/Point{chip}_{media}_{drug_}_Channel{channel}_VC_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'date'
+  - 'drug'
+  - 'dose'
+rules:
+  - 'drug_dict = {"Ver": "Verapamil", "Fle": "Flecainide"}; drug = drug_dict[drug_]'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-10-17'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2019-08- 04'
+experiment_by: 'Berenice Charrez'
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\SCVI20\190804_Verap_Flec_SCVI20_std'

@@ -1,0 +1,21 @@
+folder: "181216_Amiod_Mex_SCVI20"
+regexs:
+  - "{date}_{dose_ami}Ami_{dose_mex}Mex_{pacing_frequency}/Point{chip}_{media}_{drug}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose_ami}_{pacing_frequency}_AmiMex/Point{chip}_{media}_{drug}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose_ami}Ami_{pacing_frequency}/Point{chip}_{media}_{drug}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+unique_columns:
+  - "media"
+  - "chip"
+  - "pacing_frequency"
+  - "date"
+  - "drug"
+  - "dose"
+rules:
+  - 'dose = dose_ami if drug == "Ami" else globals().get("dose_mex", dose_ami)'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: "2019-06-02"
+uploaded_by: "Henrik Finsberg"
+experiment_date: "2018-12-16"
+experiment_by: "Berenice Charrez"
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\181216_Amiod_Mex_SCVI20'

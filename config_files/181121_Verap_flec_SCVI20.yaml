@@ -1,0 +1,36 @@
+folder: "181121_Verap_flec_SCVI20"
+regexs:
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/Point{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/PointF_{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/Point{chip}_Ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/Point{chip}_ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd"
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/Point{chip}_{media}_Ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency}_{dose}/{drug_}_{media}/Point{chip}_{media}_ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/Point{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/PointF_{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/Point{chip}_Ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/Point{chip}_ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/Point{chip}_{media}_Ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{drug_}_{media}/Point{chip}_{media}_ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}{drug_}/Point{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}/Point{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}/PointF_{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}/Point{chip}_Ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}/Point{chip}_ctl_{media}_Channel{channel}_VC_Seq{seq_nr}.nd"
+  - "{date}_{pacing_frequency} {dose}/{media}/Point{chip}_{media}_Ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{pacing_frequency} {dose}/{media}/Point{chip}_{media}_ctl_Channel{channel}_VC_Seq{seq_nr}.nd2"
+
+unique_columns:
+  - "media"
+  - "chip"
+  - "pacing_frequency"
+  - "dose"
+  - "drug"
+rules:
+  - 'drug_dict = {"V": "Verapamil", "Verap": "Verapamil", "F": "Flecainide", "Flec": "Flecainide", "": "Control", "Ctl": "Control"}; drug = drug_dict[drug_]'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: "2019-07-30"
+uploaded_by: "Henrik Finsberg"
+experiment_date: "2018-11-21"
+experiment_by: "Verena Charwat"

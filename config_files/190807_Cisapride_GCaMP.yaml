@@ -1,0 +1,21 @@
+folder: "190807_Cisapride_GCaMP"
+regexs:
+  - "{date}_{dose}_{pacing_frequency}/{std}/Point{std}+C{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{std}/Point{std}+C{chip}_Channel{channel}_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{std}/Point{std}SM{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{std}/Point{std}SM{chip}_Channel{channel}_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{std}/3B_5B_repeat/Point{std}+C{chip}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{std}/3B_5B_repeat/Point{std}+C{chip}_Channel{channel}_Seq{seq_nr}.nd2"
+unique_columns:
+  - "std"
+  - "chip"
+  - "pacing_frequency"
+  - "date"
+  - "dose"
+
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: "2020-06-08"
+uploaded_by: "Henrik Finsberg"
+experiment_date: "2019-08-07"
+experiment_by: "Berenice Charrez"

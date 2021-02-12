@@ -1,0 +1,18 @@
+folder: "181205_Cisap_Nifed_SCVI20"
+regexs:
+  - "{date}_{dose}_{pacing_frequency}/{drug}/Point{chip}_{media}_{drug}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+  - "{date}_{dose}_{pacing_frequency}/{drug}/Point{chip}_{media}_Channel{channel}_VC_Seq{seq_nr}.nd2"
+unique_columns:
+  - "media"
+  - "chip"
+  - "pacing_frequency"
+  - "date"
+  - "drug"
+  - "dose"
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: "2019-11-06"
+uploaded_by: "Henrik Finsberg"
+experiment_date: "2018-12-05"
+experiment_by: "Berenice Charrez"
+original_path: 'F:\NikonElementsImages\JOBS\jobsdb Projects\Berenice\181205_Cisap_Nifed_SCVI20'

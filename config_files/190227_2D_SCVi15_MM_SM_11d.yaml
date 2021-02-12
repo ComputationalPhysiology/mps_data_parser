@@ -1,0 +1,15 @@
+folder: '20190227_1Hz_SCVI15_2D_11dMMorSM'
+regexs:
+  - '{date}_{pacing_frequency}_SCVI15_2D_11dMMorSM/Point{media}_{chip}_Channel{channel}_Seq{seq_nr}.nd2'
+unique_columns:
+  - 'media'
+  - 'chip'
+  - 'pacing_frequency'
+  - 'date'
+# Use pythons datetime modulue and
+# datetime.datetime.today().date().isoformat() to get the date today
+uploaded_date: '2019-04-10'
+uploaded_by: 'Henrik Finsberg'
+experiment_date: '2019-02-27'
+experiment_by: 'Verena Charwat'
+original_path: 'H:\Verena\190212-190301_SCVI15_SCVI22_MMstudy\190227_2D_SCVi15_MM_SM_11d\20190227_1Hz_SCVI15_2D_11dMMorSM'
