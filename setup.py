@@ -40,11 +40,11 @@ setup(
     name="mps_data_parser",
     packages=find_packages(include=["mps_data_parser", "mps_data_parser.*"]),
     test_suite="tests",
-    url="https://github.com/finsberg/mps_data_parser",
+    url="https://github.com/ComputationalPhysiology/mps_data_parser",
     version="0.1.0",
     project_urls={
         "Documentation": "https://mps-data-parser.readthedocs.io.",
-        "Source": "https://github.com/finsberg/mps_data_parser",
+        "Source": "https://github.com/ComputationalPhysiology/mps_data_parser",
     },
     zip_safe=False,
 )

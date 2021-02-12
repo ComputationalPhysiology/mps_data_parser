@@ -2,14 +2,14 @@
 
 
 
-![CI](https://github.com/finsberg/mps_data_parser/workflows/CI/badge.svg)
+![CI](https://github.com/ComputationalPhysiology/mps_data_parser/workflows/CI/badge.svg)
 
 
 
 Tool for parsing information from filenames
 
 
-* Source code: https://github.com/finsberg/mps_data_parser
+* Source code: https://github.com/ComputationalPhysiology/mps_data_parser
 
 ## Features
 

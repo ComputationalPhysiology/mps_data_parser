@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at <https://github.com/finsberg/mps_data_parser/issues>.
+Report bugs at <https://github.com/ComputationalPhysiology/mps_data_parser/issues>.
 
 If you are reporting a bug, please include:
 
@@ -38,7 +38,7 @@ docstrings, or even on the web in blog posts, articles, and such.
 ### Submit Feedback
 
 The best way to send feedback is to file an issue at
-<https://github.com/finsberg/mps_data_parser/issues>.
+<https://github.com/ComputationalPhysiology/mps_data_parser/issues>.
 
 If you are proposing a feature:
 
@@ -108,7 +108,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2.  If the pull request adds functionality, the docs should be updated.
     Put your new functionality into a function with a docstring, and add
     the feature to the list in README.rst.
-3.  The pull request should work for Python 3.7 and 3.8. Check https://github.com/finsberg/mps_data_parser/actions to make sure all tests are passing.
+3.  The pull request should work for Python 3.7 and 3.8. Check https://github.com/ComputationalPhysiology/mps_data_parser/actions to make sure all tests are passing.
     Python versions.
 
 ## Tips

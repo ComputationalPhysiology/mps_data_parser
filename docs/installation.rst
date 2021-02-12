@@ -37,13 +37,13 @@ and Windows users can use
 Stable release
 --------------
 
-To install MPS database parser, run this command in your terminal:
+To install MPS data parser, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install mps_database_parser
+    $ pip install mps_data_parser
 
-This is the preferred method to install MPS database parser, as it will always install the most recent stable release.
+This is the preferred method to install MPS data parser, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -56,19 +56,19 @@ you through the process.
 From sources
 ------------
 
-The sources for MPS database parser can be downloaded from the `Github repo`_.
+The sources for MPS data parser can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git@github.com:finsberg/mps_database_parser.git
+    $ git clone git@github.com:ComputationalPhysiology/mps_data_parser.git
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/finsberg/mps_database_parser/tarball/master
+    $ curl -OJL https://github.com/ComputationalPhysiology/mps_data_parser/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -94,5 +94,5 @@ In addition you should also make sure to install the pre-commit hook. All of thi
 
 Note that this will also install the main package in editable mode, which is nice when developing.
 
-.. _Github repo: https://github.com/finsberg/mps_database_parser
-.. _tarball: https://github.com/finsberg/mps_database_parser/tarball/master
+.. _Github repo: https://github.com/ComputationalPhysiology/mps_data_parser
+.. _tarball: https://github.com/ComputationalPhysiology/mps_data_parser/tarball/master
