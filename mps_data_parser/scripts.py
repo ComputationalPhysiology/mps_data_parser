@@ -73,7 +73,7 @@ def check_args(args):
     return True
 
 
-def check(args):
+def check(args):  # noqa: C901
 
     logger.info(f"Checking folder {args['folder']} with config {args['config']}")
     config = load_config(args["config"])
