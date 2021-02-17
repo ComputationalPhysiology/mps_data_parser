@@ -7,7 +7,6 @@ from typing import Any, Dict, List, Optional, Union
 import yaml
 
 logger = logging.getLogger(__name__)
-
 ABREV_FILE = Path(__file__).parent.joinpath("abrev.yaml")
 PathStr = Union[str, Path]
 

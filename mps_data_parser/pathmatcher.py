@@ -67,13 +67,16 @@ class PathMatcher:
         self._strict = strict
         self.folder = self.root.name
         self._operator = config.get("operator")
-        self._regexs = config.get("regexs", [])
+        # The map operation here ensures that even if your regexs are defined
+        # for unix paths then it will also work for windows (and vica versa)
+        self._regexs = list(map(lambda x: str(Path(x)), config.get("regexs", [])))
         self._rules = config.get("rules", [])
-        self.excludes = config.get("excludes", [])
+        self.excludes = list(map(lambda x: str(Path(x)), config.get("excludes", [])))
         self._config = config.copy()
         self.abrev = Abbreviations(
             data=additional_abbreviations, filename=abrev_file, raise_on_failure=False
         )
+
         if additional_abbreviations is not None:
             self.abrev.update(additional_abbreviations)
 
