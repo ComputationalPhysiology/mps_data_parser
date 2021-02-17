@@ -24,7 +24,7 @@ attributes = dict(
     seq_nr="0001",
 )
 folder = Path(config["folder"])  # type: ignore
-example_path = folder.joinpath(config["regexs"][0].format(**attributes))
+example_path = folder.joinpath(str(Path(config["regexs"][0])).format(**attributes))
 test_data = attributes.copy()
 test_data.update(  # type: ignore
     folder=str(folder),

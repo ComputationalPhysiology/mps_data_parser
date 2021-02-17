@@ -121,7 +121,7 @@ class PathMatcher:
 
         relative_path = Path(path).relative_to(self.root)
         result: Dict[str, Optional[str]] = {
-            "path": relative_path.as_posix(),
+            "path": str(relative_path),
             "folder": self.folder,
             "operator": self._operator,
             "extension": relative_path.suffix,
