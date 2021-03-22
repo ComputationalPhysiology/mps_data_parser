@@ -1,4 +1,3 @@
-import shutil
 from copy import deepcopy
 
 import pytest
@@ -7,9 +6,9 @@ import yaml
 from mps_data_parser import abreviations as ab
 
 TEST_ABREV_FILE = "test_abrev_file.yaml"
-shutil.copy(ab.ABREV_FILE, TEST_ABREV_FILE)
-with open(TEST_ABREV_FILE, "r") as f:
-    DATA = yaml.load(f, Loader=yaml.SafeLoader)
+DATA = ab.GENERAL_ABBREVIATIONS
+with open(TEST_ABREV_FILE, "w") as f:
+    yaml.dump(DATA, f)
 
 
 def get_kwargs():
@@ -24,7 +23,7 @@ def get_kwargs():
 
 def test_empty():
 
-    abrev = ab.Abbreviations()
+    abrev = ab.Abbreviations(data={})
     abrev.add_key("drug")
     assert "drug" in abrev.keys()
 
@@ -36,7 +35,7 @@ def test_empty():
 @pytest.mark.parametrize("kwargs", get_kwargs())
 def test_value(kwargs):
 
-    abrev = ab.Abbreviations(**kwargs)
+    abrev = ab.Abbreviations(**deepcopy(kwargs))
 
     if "filename" in kwargs:
         assert abrev.is_persistent()
@@ -53,7 +52,6 @@ def test_value(kwargs):
     new_abrev = ab.Abbreviations(**kwargs)
     new_data = new_abrev.data
 
-    # breakpoint()
     assert "drug" not in old_data.keys()
     assert value in data["drug"].keys()
 

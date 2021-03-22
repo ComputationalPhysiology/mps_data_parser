@@ -1,10 +1,13 @@
-import shutil
+import yaml
 
 from mps_data_parser import MPSData
 from mps_data_parser import abreviations as ab
 
 TEST_ABREV_FILE = "test_abrev_file.yaml"
-shutil.copy(ab.ABREV_FILE, TEST_ABREV_FILE)
+# shutil.copy(ab.ABREV_FILE, TEST_ABREV_FILE)
+DATA = ab.GENERAL_ABBREVIATIONS
+with open(TEST_ABREV_FILE, "w") as f:
+    yaml.dump(DATA, f)
 
 
 def test_mps_data():

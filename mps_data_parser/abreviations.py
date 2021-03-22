@@ -7,8 +7,16 @@ from typing import Any, Dict, List, Optional, Union
 import yaml
 
 logger = logging.getLogger(__name__)
-ABREV_FILE = Path(__file__).parent.joinpath("abrev.yaml")
 PathStr = Union[str, Path]
+
+GENERAL_ABBREVIATIONS = {
+    "media": {"MM": ["MM", "mm"], "SM": ["SM", "sm"]},
+    "pacing": {
+        "0Hz": ["0 Hz", "0 hz", "0Hz", "0hz", "spont", "spontaneous"],
+        "1Hz": ["1 Hz", "1 hz", "1Hz", "1hz", "paced"],
+        "2Hz": ["2 Hz", "2 hz", "2Hz", "2hz"],
+    },
+}
 
 
 def _load_data(filename: Optional[PathStr] = None) -> Dict[str, Dict[str, List[str]]]:
@@ -62,9 +70,8 @@ class Abbreviations:
     ):
         self._filename = filename
         self.raise_on_failure = raise_on_failure
-        self._data = _load_data(filename=filename)
-        if data is not None:
-            self.update(data)
+        self._data = data if data is not None else GENERAL_ABBREVIATIONS
+        self.update(_load_data(filename=filename))
 
     def __repr__(self):
         return f"{self.__class__.__name__}({', '.join(self.keys())})"
