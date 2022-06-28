@@ -12,9 +12,9 @@ logger = logging.getLogger(__name__)
 
 PathStr = Union[str, Path]
 
-VOLTAGE_CHANNELS = ["Red", "berst", "volt"]
-CALCIUM_CHANNELS = ["Cyan", "gcamp"]
-BF_CHANNELS = ["BF", "bf", "brightfield"]
+VOLTAGE_CHANNELS = ["Red", "berst", "volt", "TL-20"]
+CALCIUM_CHANNELS = ["Cyan", "gcamp", "FITC-PS"]
+BF_CHANNELS = ["BF", "bf", "brightfield", "CY5-PS"]
 
 TRACE_TYPES = ["voltage", "calcium", "brightfield"]
 
@@ -69,7 +69,10 @@ class PathMatcher:
         self._operator = config.get("operator")
         # The map operation here ensures that even if your regexs are defined
         # for unix paths then it will also work for windows (and vica versa)
-        self._regexs = list(map(lambda x: str(Path(x)), config.get("regexs", [])))
+        regexs = config.get("regexs", None)
+        if regexs is None:
+            regexs = config.get("patterns", [])
+        self._regexs = list(map(lambda x: str(Path(x)), regexs))
         self._rules = config.get("rules", [])
         self.excludes = list(map(lambda x: str(Path(x)), config.get("excludes", [])))
         self._config = config.copy()
@@ -89,8 +92,8 @@ class PathMatcher:
         self._keys = [
             tuple(
                 parse.search(
-                    re.sub("\:(.*?)\}", "}", r),  # noqa: W605
-                    re.sub("\:(.*?)\}", "}", r),  # noqa: W605
+                    re.sub(r"\:(.*?)\}", "}", r),  # noqa: W605
+                    re.sub(r"\:(.*?)\}", "}", r),  # noqa: W605
                 ).named.keys()
             )
             for r in self._regexs
