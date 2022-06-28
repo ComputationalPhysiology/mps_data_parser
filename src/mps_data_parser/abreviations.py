@@ -2,7 +2,11 @@ import logging
 from collections import Counter
 from copy import deepcopy
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Union
 
 import yaml
 
@@ -30,7 +34,7 @@ def _load_data(filename: Optional[PathStr] = None) -> Dict[str, Dict[str, List[s
 
 
 def clean_data(
-    data: Dict[str, Dict[str, List[str]]]
+    data: Dict[str, Dict[str, List[str]]],
 ) -> Dict[str, Dict[str, List[str]]]:
     new_data = {}
     for key, value in data.items():
@@ -40,7 +44,9 @@ def clean_data(
 
 
 def _dump_data(
-    d: Dict[str, Any], filename: Optional[PathStr] = None, overwrite=False
+    d: Dict[str, Any],
+    filename: Optional[PathStr] = None,
+    overwrite=False,
 ) -> Dict[str, Dict[str, List[str]]]:
     if filename is None:
         return clean_data(d)
@@ -173,7 +179,10 @@ class Abbreviations:
             logger.debug(f"No duplicates for key {key}")
 
     def _update_data(
-        self, key: str, data: Dict[str, Any], overwrite: bool = False
+        self,
+        key: str,
+        data: Dict[str, Any],
+        overwrite: bool = False,
     ) -> None:
         self._data[key].update(data)
         self._data = clean_data(self._data)
@@ -182,7 +191,9 @@ class Abbreviations:
 
     def _dump_data(self, overwrite: bool = False):
         self._data = _dump_data(
-            self._data, filename=self._filename, overwrite=overwrite
+            self._data,
+            filename=self._filename,
+            overwrite=overwrite,
         )
 
     def has_value(self, key: str, value: str) -> bool:

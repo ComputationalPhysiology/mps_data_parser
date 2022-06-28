@@ -2,7 +2,6 @@ from copy import deepcopy
 
 import pytest
 import yaml
-
 from mps_data_parser import abreviations as ab
 
 TEST_ABREV_FILE = "test_abrev_file.yaml"
@@ -16,7 +15,8 @@ def get_kwargs():
         pytest.param(dict(filename=TEST_ABREV_FILE), id="file"),
         pytest.param(dict(data=deepcopy(DATA)), id="data"),
         pytest.param(
-            dict(data=deepcopy(DATA), filename=TEST_ABREV_FILE), id="data+file"
+            dict(data=deepcopy(DATA), filename=TEST_ABREV_FILE),
+            id="data+file",
         ),
     ]
 

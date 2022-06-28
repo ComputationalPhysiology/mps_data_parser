@@ -1,7 +1,6 @@
 from pathlib import Path
 
 import pytest
-
 from mps_data_parser import PathMatcher
 
 config = {

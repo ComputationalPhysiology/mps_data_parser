@@ -1,7 +1,6 @@
 import yaml
-
-from mps_data_parser import MPSData
 from mps_data_parser import abreviations as ab
+from mps_data_parser import MPSData
 
 TEST_ABREV_FILE = "test_abrev_file.yaml"
 # shutil.copy(ab.ABREV_FILE, TEST_ABREV_FILE)

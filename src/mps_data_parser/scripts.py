@@ -5,7 +5,8 @@ import pprint
 from collections import Counter
 from pathlib import Path
 
-from .pathmatcher import TRACE_TYPES, PathMatcher
+from .pathmatcher import PathMatcher
+from .pathmatcher import TRACE_TYPES
 from .utils import load_config
 
 logger = logging.getLogger(__name__)
@@ -19,13 +20,23 @@ def get_args():
     usage = "python -m mps_sql <path to folder> <path to config file> [OPTIONS]"
     parser = argparse.ArgumentParser(description=descr, usage=usage)
     parser.add_argument(
-        action="store", dest="folder", type=str, help="Path to the root folder"
+        action="store",
+        dest="folder",
+        type=str,
+        help="Path to the root folder",
     )
     parser.add_argument(
-        action="store", dest="config", type=str, help="Path to the config file"
+        action="store",
+        dest="config",
+        type=str,
+        help="Path to the config file",
     )
     parser.add_argument(
-        "-v", "--verbose", dest="verbose", action="store_true", help="More printing"
+        "-v",
+        "--verbose",
+        dest="verbose",
+        action="store_true",
+        help="More printing",
     )
     parser.add_argument(
         "-nc",
@@ -124,7 +135,7 @@ def check(args):  # noqa: C901
                     datas[unique_key] = {}
                 if "trace_type" not in data:
                     raise ValueError(
-                        f"Could not find trace type for output \n{pprint.pformat(data)}"
+                        f"Could not find trace type for output \n{pprint.pformat(data)}",
                     )
 
                 if data["trace_type"] in datas[unique_key]:
@@ -146,7 +157,7 @@ def check(args):  # noqa: C901
         for experiment, types in cor_traces.items():
             if trace_type not in types:
                 logger.info(
-                    f"Missing trace type '{trace_type}' for experiment: {experiment}"
+                    f"Missing trace type '{trace_type}' for experiment: {experiment}",
                 )
 
     msg = ""

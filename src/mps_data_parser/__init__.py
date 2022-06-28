@@ -1,6 +1,10 @@
 import logging as _logging
 
-from . import abreviations, mps_data, pathmatcher, scripts, utils
+from . import abreviations
+from . import mps_data
+from . import pathmatcher
+from . import scripts
+from . import utils
 from .mps_data import MPSData
 from .pathmatcher import PathMatcher
 

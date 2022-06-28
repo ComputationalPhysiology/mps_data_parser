@@ -3,7 +3,8 @@ import os
 from pathlib import Path
 
 import yaml
-from mps_database import PathMatcher, sql
+from mps_database import PathMatcher
+from mps_database import sql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -124,7 +125,7 @@ def pipeline():
 
                 # Check if data allready is in the table
                 query = session.query(sql.MPSData).filter(
-                    sql.MPSData.path == path.relative_to(folder_path).as_posix()
+                    sql.MPSData.path == path.relative_to(folder_path).as_posix(),
                 )
                 if query.count() > 0:
                     # We might want to update the record later

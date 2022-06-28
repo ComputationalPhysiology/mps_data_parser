@@ -2,7 +2,6 @@ import itertools
 
 import numpy as np
 import pytest
-
 from mps_data_parser import utils
 
 dose_lists = [

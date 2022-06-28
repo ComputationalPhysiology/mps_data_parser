@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -19,12 +19,6 @@ jobs:
     - name: Install dependencies
       run: |
         make dev
-    - name: Lint with flake8
-      run: |
-        make lint
-    - name: Type checking with mypy
-      run: |
-        make type
     - name: Test with pytest
       run: |
         make test
@@ -34,7 +28,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -44,12 +38,6 @@ jobs:
     - name: Install dependencies
       run: |
         make dev
-    - name: Lint with flake8
-      run: |
-        make lint
-    - name: Type checking with mypy
-      run: |
-        make type
     - name: Test with pytest
       run: |
         make test

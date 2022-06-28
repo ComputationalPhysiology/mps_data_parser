@@ -87,5 +87,5 @@ class MPSData:
     @staticmethod
     def arguments():
         return MPSData.required_arguments() + tuple(
-            MPSData.default_optional_arguments().keys()
+            MPSData.default_optional_arguments().keys(),
         )

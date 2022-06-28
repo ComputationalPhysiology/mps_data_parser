@@ -1,7 +1,10 @@
 import logging
 import re
 from pathlib import Path
-from typing import Any, Dict, Optional, Union
+from typing import Any
+from typing import Dict
+from typing import Optional
+from typing import Union
 
 import parse
 
@@ -77,7 +80,9 @@ class PathMatcher:
         self.excludes = list(map(lambda x: str(Path(x)), config.get("excludes", [])))
         self._config = config.copy()
         self.abrev = Abbreviations(
-            data=additional_abbreviations, filename=abrev_file, raise_on_failure=False
+            data=additional_abbreviations,
+            filename=abrev_file,
+            raise_on_failure=False,
         )
 
         if additional_abbreviations is not None:
@@ -94,7 +99,7 @@ class PathMatcher:
                 parse.search(
                     re.sub(r"\:(.*?)\}", "}", r),  # noqa: W605
                     re.sub(r"\:(.*?)\}", "}", r),  # noqa: W605
-                ).named.keys()
+                ).named.keys(),
             )
             for r in self._regexs
         ]
