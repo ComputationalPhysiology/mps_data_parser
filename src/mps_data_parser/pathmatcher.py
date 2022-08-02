@@ -15,9 +15,9 @@ logger = logging.getLogger(__name__)
 
 PathStr = Union[str, Path]
 
-VOLTAGE_CHANNELS = ["Red", "berst", "volt", "TL-20"]
+VOLTAGE_CHANNELS = ["Red", "berst", "volt", "CY5-PS"]
 CALCIUM_CHANNELS = ["Cyan", "gcamp", "FITC-PS"]
-BF_CHANNELS = ["BF", "bf", "brightfield", "CY5-PS"]
+BF_CHANNELS = ["BF", "bf", "brightfield", "TL-20"]
 
 TRACE_TYPES = ["voltage", "calcium", "brightfield"]
 
