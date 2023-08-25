@@ -173,9 +173,10 @@ class PathMatcher:
                 # to None otherwise
                 result[key] = self._config.get(key, None)
 
-        # Pack this into the MPSData object
+        # Pack  this into the MPSData object
         logger.debug(f"Raw data: \n {result}")
         cleaned_data = MPSData(**result, abrev=self.abrev)  # type: ignore
+
         logger.debug(f"Clean data: \n{cleaned_data.to_dict()}")
 
         return cleaned_data

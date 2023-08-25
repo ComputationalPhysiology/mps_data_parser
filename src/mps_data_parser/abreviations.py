@@ -77,6 +77,7 @@ class Abbreviations:
         self._filename = filename
         self.raise_on_failure = raise_on_failure
         self._data = data if data is not None else GENERAL_ABBREVIATIONS
+        self._syn: Dict[str, Dict[str, str]] = {}
         self.update(_load_data(filename=filename))
 
     def __repr__(self):
@@ -161,7 +162,20 @@ class Abbreviations:
                 }
             })
         """
-        self._data.update(data)
+        d: Dict[str, Dict[str, List[str]]] = {}
+        syn: Dict[str, Dict[str, str]] = {}
+        for key, vs in data.items():
+            if key not in d:
+                d[key] = {}
+            if key not in syn:
+                syn[key] = {}
+            for k, v in vs.items():
+                for vi in v:
+                    d[key][vi] = v
+                    syn[key][vi] = k
+
+        self._data.update(d)
+        self._syn.update(syn)
 
     @property
     def data(self) -> Dict[str, Dict[str, List[str]]]:
@@ -206,11 +220,11 @@ class Abbreviations:
     def list_synonyms(self, key: str, value: str) -> List[str]:
         self._check_key(key)
         data = self.data.get(key, {})
-        values = list(data.keys())
-        if value not in values:
-            msg = f"Could not find value {value}. " f"Possible values are {values}"
-            logger.warning(msg)
-            return []
+        # values = list(data.keys())
+        # if value not in values:
+        #     msg = f"Could not find value {value}. " f"Possible values are {values}"
+        #     logger.warning(msg)
+        #     return []
 
         return data.get(value, [])
 
@@ -304,9 +318,17 @@ class Abbreviations:
             print(abrev.get_name("test"))
             # Should print 'TestDrug'
         """
-        for value in self.list_values(key):
-            if synonym in self.list_synonyms(key, value):
-                return value
-        if self.raise_on_failure:
+        # if key == "drug":
+        # breakpoint()
+
+        try:
+            value = self._syn.get(key, {}).get(synonym, None)
+        except Exception:
+            value = None
+
+        # for value in self.list_values(key):
+        #     if synonym in self.list_synonyms(key, value):
+        #         return value
+        if value is None and self.raise_on_failure:
             raise ValueError(f"Could not find name for key {key} and synonym {synonym}")
-        return None
+        return value

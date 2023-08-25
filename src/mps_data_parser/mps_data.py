@@ -23,6 +23,7 @@ class MPSData:
         self.path = path
         if abrev is None:
             abrev = Abbreviations(raise_on_failure=False)
+
         optional_arguments = MPSData.default_optional_arguments()
         # Check if we have a new argument
         for key in kwargs:
@@ -35,9 +36,11 @@ class MPSData:
                 logger.debug(msg)
 
         optional_arguments.update(kwargs)
+        # breakpoint()
         for k, v in optional_arguments.items():
             # Try to see if name is an abrevation, and if not use
             # the orignal value
+
             name = abrev.get_name(k, v) or v
             setattr(self, k, name)
 
